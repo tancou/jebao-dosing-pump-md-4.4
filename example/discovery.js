@@ -3,12 +3,12 @@
  *
  * Usage: node discovery.js
  *
- * To see debug output call like: DEBUG=ph803w* node discovery.js
+ * To see debug output call like: DEBUG=jebao* node discovery.js
  */
 
-const { PH803WDiscovery } = require('../index');
+const { JebaoDiscovery } = require('../index');
 
-const discovery = new PH803WDiscovery();
+const discovery = new JebaoDiscovery();
 
 discovery.on('error', err => {
     console.log(`ERROR: ${err}`);
