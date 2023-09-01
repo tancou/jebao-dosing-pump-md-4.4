@@ -1,6 +1,6 @@
 {
-  "name": "node-ph803w",
-  "version": "0.3.0",
+  "name": "jebao-dosing-pump-md-4.4",
+  "version": "0.1.0",
   "dependencies": {
     "debug": "^4.3.4"
   },
