@@ -14,11 +14,14 @@ function delay(ms) {
 
 async function processAction(device, action) {
     if (action) {
+        console.log(`Wait ` + action.delay + `ms before : ` + action.message);
         await delay(action.delay);
-        console.log(action.message + ` delayed by ` + action.delay);
+        console.log(`Execute now : ` + action.message);
         await device.sendAction(action.action);
     } else {
+        console.log(`Wait 5000ms before close the socket ! ☠️`);
         await delay(5000);
+        console.log(`Close the socket ! ☠️`);
         device.destroy();
     }
 }
@@ -30,7 +33,7 @@ async function main() {
         {
             message: 'Start Pump 2 👍',
             action: JebaoActions.pump2_start,
-            delay: 3000
+            delay: 3000 // applied before action
         },
         {
             message: 'Stop Pump 2 👎',
