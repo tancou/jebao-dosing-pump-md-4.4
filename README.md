@@ -1,4 +1,4 @@
-![Logo](dosing-pump-jebao-md-44.png)
+![Logo](https://raw.githubusercontent.com/tancou/jebao-dosing-pump-md-4.4/main/dosing-pump-jebao-md-44.png)
 
 # Jebao Dosing Pump MD 4.4
 
