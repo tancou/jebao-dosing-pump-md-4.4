@@ -40,6 +40,9 @@ Available examples (see example folder):
 
 ## Changelog
 
+### 1.0.0 (2023-09-03)
+* (tancou) Release v1.0.0
+
 ### 0.1.0 (2023-08-30)
 * (tancou) Proof of concept to retrieve and send the correct data to the device.
 
