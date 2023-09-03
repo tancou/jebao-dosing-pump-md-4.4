@@ -4,7 +4,7 @@ const expect = chai.expect;
 const TestServer = require('./lib/testUdpServer');
 const JebaoDiscovery = require('../lib/discovery');
 
-describe('PH803-W Discovery Test', function() {
+describe('Jebao Discovery Test', function() {
     let testServer;
 
     before('init server', async () => {

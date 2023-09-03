@@ -41,6 +41,10 @@ Available examples (see example folder):
 ## Changelog
 
 ### 1.0.0 (2023-09-03)
+* (tancou) Release v1.0.1
+* (tancou) Fix typo and version
+
+### 1.0.0 (2023-09-03)
 * (tancou) Release v1.0.0
 
 ### 0.1.0 (2023-08-30)
