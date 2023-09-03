@@ -40,6 +40,9 @@ Available examples (see example folder):
 
 ## Changelog
 
+### 1.0.3 (2023-09-03)
+* (tancou) Clear some code
+
 ### 1.0.2 (2023-09-03)
 * (tancou) Release v1.0.2 in order to test Github Actions
 
