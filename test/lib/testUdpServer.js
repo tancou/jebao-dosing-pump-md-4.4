@@ -8,7 +8,7 @@ const requestResponse = {
 };
 
 /**
- * Server to emulate a PH803W device for discovery for testing
+ * Server to emulate a Jebao device for discovery for testing
  */
 class TestServer {
     /**

@@ -1,5 +1,5 @@
 /**
- * Example script to get Data from a PH803W device
+ * Example script to get Data from a Jebao device
  *
  * Usage: node data.js <IP address>
  *

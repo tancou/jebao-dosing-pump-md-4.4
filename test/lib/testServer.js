@@ -20,7 +20,7 @@ const dataResponses = [
 ];
 
 /**
- * Server to emulate a PH803W device for testing
+ * Server to emulate a Jebao device for testing
  */
 class TestServer {
     /**
