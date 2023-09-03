@@ -30,6 +30,14 @@ Available examples (see example folder):
 * data.js: Script to connect to a device via IP, authenticate and retrieve data
 * discovery.js: Script to discover devices in the network
 
+## Todo
+
+- Add send command tests
+- Improve Protocol.md file
+- Create a function to create custom send request instead of hard written strings
+- Reverse cron requests
+- Reverse calibration command
+
 ## Changelog
 
 ### 0.1.0 (2023-08-30)
