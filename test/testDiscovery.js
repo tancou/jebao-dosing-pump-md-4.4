@@ -2,7 +2,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const TestServer = require('./lib/testUdpServer');
-const PH803WDiscovery = require('../lib/discovery');
+const JebaoDiscovery = require('../lib/discovery');
 
 describe('PH803-W Discovery Test', function() {
     let testServer;
@@ -13,7 +13,7 @@ describe('PH803-W Discovery Test', function() {
     });
 
     it('test udp discovery', done => {
-        const discovery = new PH803WDiscovery();
+        const discovery = new JebaoDiscovery();
 
         discovery.on('error', err => console.log(`ERROR: ${err}`));
 
@@ -30,7 +30,7 @@ describe('PH803-W Discovery Test', function() {
     });
 
     it('parse discovery message #1', done => {
-        const discovery = new PH803WDiscovery();
+        const discovery = new JebaoDiscovery();
 
         discovery.on('error', err => console.log(`ERROR: ${err}`));
 
@@ -48,7 +48,7 @@ describe('PH803-W Discovery Test', function() {
     });
 
     it('parse discovery message #2', done => {
-        const discovery = new PH803WDiscovery();
+        const discovery = new JebaoDiscovery();
 
         discovery.on('error', err => console.log(`ERROR: ${err}`));
 

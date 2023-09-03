@@ -2,9 +2,9 @@
 const chai = require('chai');
 const expect = chai.expect;
 const TestServer = require('./lib/testServer');
-const PH803WDevice = require('../lib/device');
+const JebaoDevice = require('../lib/device');
 
-describe('PH803-W Device Test', function() {
+describe('Jebao Device Test', function() {
     let testServer;
 
     before('init server', async () => {
@@ -13,7 +13,7 @@ describe('PH803-W Device Test', function() {
     });
 
     it('connect and disconnect incl events', done => {
-        const device = new PH803WDevice('127.0.0.1');
+        const device = new JebaoDevice('127.0.0.1');
 
         device.on('connected', () => {
             device.close(false);
@@ -27,7 +27,7 @@ describe('PH803-W Device Test', function() {
     });
 
     it('connect and reconnect', done => {
-        const device = new PH803WDevice({
+        const device = new JebaoDevice({
             ip: '127.0.0.1',
             reconnectDelay: 1000
         });
@@ -61,7 +61,7 @@ describe('PH803-W Device Test', function() {
     }).timeout(3000);
 
     it('connect and login with passcode negotiation', async () => {
-        const device = new PH803WDevice('127.0.0.1');
+        const device = new JebaoDevice('127.0.0.1');
         await device.connect();
 
         await device.login();
@@ -70,7 +70,7 @@ describe('PH803-W Device Test', function() {
     });
 
     it('connect and login with provided passcode', async () => {
-        const device = new PH803WDevice('127.0.0.1');
+        const device = new JebaoDevice('127.0.0.1');
         await device.connect();
 
         await device.login('IPQRSTUVWX');
@@ -79,7 +79,7 @@ describe('PH803-W Device Test', function() {
     });
 
     it('connect and failed login', async () => {
-        const device = new PH803WDevice('127.0.0.1');
+        const device = new JebaoDevice('127.0.0.1');
         await device.connect();
 
         let errored = true;
@@ -95,7 +95,7 @@ describe('PH803-W Device Test', function() {
     });
 
     it('connect, login and check ping/pong', async () => {
-        const device = new PH803WDevice('127.0.0.1');
+        const device = new JebaoDevice('127.0.0.1');
         await device.connect();
 
         await device.login();
@@ -114,7 +114,7 @@ describe('PH803-W Device Test', function() {
     }).timeout(10000);
 
     it('connect, login and retrieve data', async () => {
-        const device = new PH803WDevice('127.0.0.1');
+        const device = new JebaoDevice('127.0.0.1');
         await device.connect();
 
         await device.login();
@@ -124,10 +124,19 @@ describe('PH803-W Device Test', function() {
         device.on('data', data => {
             expect(data).to.exist;
             if (!eventCounter) {
-                expect(data.ph).to.equal(7.32);
-                expect(data.redox).to.equal(205);
-                expect(data.phOutlet).to.be.true;
-                expect(data.redoxOutlet).to.be.true;
+                expect(data.active).to.equal(false);
+                expect(data.pump1.active).to.equal(false);
+                expect(data.pump1.repeatDay).to.equal(0);
+                expect(data.pump1.cron).to.equal(true);
+                expect(data.pump2.active).to.equal(false);
+                expect(data.pump2.repeatDay).to.equal(0);
+                expect(data.pump2.cron).to.equal(false);
+                expect(data.pump3.active).to.equal(false);
+                expect(data.pump3.repeatDay).to.equal(0);
+                expect(data.pump3.cron).to.equal(false);
+                expect(data.pump4.active).to.equal(false);
+                expect(data.pump4.repeatDay).to.equal(0);
+                expect(data.pump4.cron).to.equal(false);
             }
             eventReceived = true;
             eventCounter++;
@@ -135,10 +144,19 @@ describe('PH803-W Device Test', function() {
         const data = await device.retrieveData();
 
         expect(data).to.exist;
-        expect(data.ph).to.equal(7.32);
-        expect(data.redox).to.equal(205);
-        expect(data.phOutlet).to.be.true;
-        expect(data.redoxOutlet).to.be.true;
+        expect(data.active).to.equal(false);
+        expect(data.pump1.active).to.equal(false);
+        expect(data.pump1.repeatDay).to.equal(0);
+        expect(data.pump1.cron).to.equal(true);
+        expect(data.pump2.active).to.equal(false);
+        expect(data.pump2.repeatDay).to.equal(0);
+        expect(data.pump2.cron).to.equal(false);
+        expect(data.pump3.active).to.equal(false);
+        expect(data.pump3.repeatDay).to.equal(0);
+        expect(data.pump3.cron).to.equal(false);
+        expect(data.pump4.active).to.equal(false);
+        expect(data.pump4.repeatDay).to.equal(0);
+        expect(data.pump4.cron).to.equal(false);
 
         return new Promise((resolve, reject) => {
             setTimeout(async () => {

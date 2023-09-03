@@ -1,5 +1,5 @@
 const dgram = require('dgram');
-const debug = require('debug')('ph803w:testUdpServer');
+const debug = require('debug')('jebao:testUdpServer');
 
 const DEFAULT_UDP_PORT = 12414;
 
